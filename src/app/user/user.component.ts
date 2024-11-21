@@ -13,8 +13,10 @@ export class UserComponent {
   //this is a public property
 
   //@input will be mark this property setable from outside
-  @Input() avatar!: string;
-  @Input() name!: string;
+  @Input({ required: true }) avatar!: string;
+  @Input({ required: true }) name!: string;
+
+  //by setting required:true you are telling angular that property must be there
 
   get imagePath() {
     return 'assets/users/' + this.avatar;

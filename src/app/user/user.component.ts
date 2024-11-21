@@ -1,5 +1,20 @@
-import { Component, EventEmitter, Input, Output, output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 //Input with upper case is a  decorator with lower case its a special function
+//alias
+
+// type User = {
+//   id: string;
+//   avatar: string;
+//   name: string;
+// };
+
+//interface
+
+interface User {
+  id: string;
+  avatar: string;
+  name: string;
+}
 
 @Component({
   selector: 'app-user',
@@ -12,15 +27,17 @@ import { Component, EventEmitter, Input, Output, output } from '@angular/core';
 //do below so we can access it in html all thing you describe in component will be accessed in html
 export class UserComponent {
   //this is a public property
+  @Input({ required: true }) user!: User;
 
   //@input will be mark this property setable from outside
-  @Input({ required: true }) id!: string; //mene yeh input apne parent element se liya by using property binding than isi input ko mene output kiya @Output se
+  // @Input({ required: true }) id!: string; //mene yeh input apne parent element se liya by using property binding than isi input ko mene output kiya @Output se
   //phir is output ko mene waha catch kiya is tarah (select)="onSelectUser($event)"
-  @Input({ required: true }) avatar!: string;
-  @Input({ required: true }) name!: string;
-  // @Output() select = new EventEmitter();
+  // @Input({ required: true }) avatar!: string;
+  // @Input({ required: true }) name!: string;
+  @Output()
+  select = new EventEmitter();
 
-  select = output<string>();
+  // select = output<string>();
   //below output is just replacement of above code it does the same way
   //this output doesnot create a signal unlike input function it still an event emitter
 
@@ -31,11 +48,11 @@ export class UserComponent {
   //by setting required:true you are telling angular that property must be there
 
   get imagePath() {
-    return 'assets/users/' + this.avatar;
+    return 'assets/users/' + this.user.avatar;
   }
 
   onSelectUser() {
-    this.select.emit(this.id);
+    this.select.emit(this.user.id);
   }
 }
 

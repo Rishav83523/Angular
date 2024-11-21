@@ -8,5 +8,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './tasks.component.css',
 })
 export class TasksComponent {
-  @Input() Taskname!: string;
+  @Input() Taskname?: string;
 }

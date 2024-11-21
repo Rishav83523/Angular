@@ -1,27 +1,15 @@
 <app-header></app-header>
 <main>
   <ul class="" id="users">
+    @for (user of users; track user.id){
     <li>
-      <app-user [user]="users[0]" (select)="onSelectUser($event)"></app-user>
+      <app-user [user]="user" (select)="onSelectUser($event)"></app-user>
     </li>
-    <li>
-      <app-user [user]="users[1]" (select)="onSelectUser($event)"></app-user>
-    </li>
-    <li>
-      <app-user [user]="users[2]" (select)="onSelectUser($event)"></app-user>
-    </li>
-    <li>
-      <app-user [user]="users[3]" (select)="onSelectUser($event)"></app-user>
-    </li>
-    <li>
-      <app-user [user]="users[4]" (select)="onSelectUser($event)"></app-user>
-    </li>
-    <li>
-      <app-user [user]="users[5]" (select)="onSelectUser($event)"></app-user>
-    </li>
+    }
   </ul>
   <app-tasks [Taskname]="selectedUser"></app-tasks>
 </main>
 
 <!-- or <app-user /> -->
 <!-- $event is used to get hold of emitted values form user compoenent -->
+<!-- angular internally want to keep track of every that data is being rendered so that when that changes occurs instead of changing the whole list it can just change the selected item -->

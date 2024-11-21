@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, output } from '@angular/core';
 //Input with upper case is a  decorator with lower case its a special function
 
 @Component({
@@ -18,7 +18,13 @@ export class UserComponent {
   //phir is output ko mene waha catch kiya is tarah (select)="onSelectUser($event)"
   @Input({ required: true }) avatar!: string;
   @Input({ required: true }) name!: string;
-  @Output() select = new EventEmitter();
+  // @Output() select = new EventEmitter();
+
+  select = output<string>();
+  //below output is just replacement of above code it does the same way
+  //this output doesnot create a signal unlike input function it still an event emitter
+
+  //we expectially dont need to create event emitter when using output function but its actually done for you
 
   //this select will recieve an intial input unlike @Input and that inital value is EventEmitter
 

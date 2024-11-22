@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { type User } from './user.model';
 //Input with upper case is a  decorator with lower case its a special function
 //alias
 
@@ -9,12 +10,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 // };
 
 //interface
-
-interface User {
-  id: string;
-  avatar: string;
-  name: string;
-}
 
 @Component({
   selector: 'app-user',

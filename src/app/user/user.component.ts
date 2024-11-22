@@ -23,7 +23,7 @@ import { type User } from './user.model';
 export class UserComponent {
   //this is a public property
   @Input({ required: true }) user!: User;
-
+  @Input({ required: true }) selector!: boolean;
   //@input will be mark this property setable from outside
   // @Input({ required: true }) id!: string; //mene yeh input apne parent element se liya by using property binding than isi input ko mene output kiya @Output se
   //phir is output ko mene waha catch kiya is tarah (select)="onSelectUser($event)"

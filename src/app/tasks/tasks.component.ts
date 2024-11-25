@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { NewTaskComponent } from './new-task/new-task.component';
 import { TaskComponent } from './task/task.component';
+import { NewTaskData } from './task/task.model';
 
 @Component({
   selector: 'app-tasks',
@@ -52,6 +53,17 @@ export class TasksComponent {
   }
 
   onCacelAddTask() {
+    this.isAddingTask = false;
+  }
+
+  onAddTask(takData: NewTaskData) {
+    this.tasks.unshift({
+      id: Math.random().toString(),
+      userId: this.userId,
+      title: takData.title,
+      summary: takData.summary,
+      dueDate: takData.dueDate,
+    });
     this.isAddingTask = false;
   }
 }

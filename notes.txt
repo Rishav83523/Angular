@@ -137,5 +137,14 @@ ngFor ngIf ngModel are directives ,they are simply angular powered enhancements
 
  [(ngModel)] it sets up 2 way binding for ngModel, it cannot be set up for all only to few but you can make it set for your own components
 
- 
 
+
+you can also use signal for listening and 2 way binding
+ enteredTitle = signal(''); rest everything is same dont execute it in html template
+
+
+by default form in html will try to bundle the data and send it to server handling the request
+
+but it will be prevented if you import forms module
+
+formsModeile give ngSubmit event which occues when form submit haapens and browser deafult was prevented

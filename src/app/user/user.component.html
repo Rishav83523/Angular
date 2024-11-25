@@ -1,9 +1,9 @@
-<div>
+<app-card>
   <button [class.active]="selector" (click)="onSelectUser()">
     <img [src]="imagePath" [alt]="user.name" />
     <span>{{ user.name }}</span>
   </button>
-</div>
+</app-card>
 
 <!-- imagePath is used as a property we dont executeit  -->
 <!-- to read signal we execute it  -->

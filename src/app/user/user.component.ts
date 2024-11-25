@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { type User } from './user.model';
+import { CardComponent } from '../shared/card/card.component';
 //Input with upper case is a  decorator with lower case its a special function
 //alias
 
@@ -14,7 +15,7 @@ import { type User } from './user.model';
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [],
+  imports: [CardComponent],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css',
 })

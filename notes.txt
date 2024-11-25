@@ -1,40 +1,40 @@
 Angular is browser side framework not node js side framework
 
-but Angular cli requires node js 
+but Angular cli requires node js
 
 npm install -g @angular/cli
 
-cli makes ng command available 
+cli makes ng command available
 
 ng new project name
 
 main.ts will be the first file to be executed when the app loads
 
-main.ts gets automatically injected in index.html by angular 
+main.ts gets automatically injected in index.html by angular
 
 bootstrape application requires a component and this tries to look for that app component in index.html
 
-@Component({}) is a decorator it attaches a metadata to certain things 
+@Component({}) is a decorator it attaches a metadata to certain things
 
 this decorator turns that class into a angular component
 
-selector tells angular which compoenet to look for replace for with its markup 
+selector tells angular which compoenet to look for replace for with its markup
 
 
 angular is not automaticaly scanning files to look for compnents so you need to say about its compoenets
 
 those components part of same tree will be able to work together and exchange data and communicate with each other
 
-to make angular know about your component you go inside app.component.html and use the selector of that compoenet as custom html tag and then 
-also you need to import in it ts file and also mention in imports because as said earlier angular doesnt automatically scans file 
+to make angular know about your component you go inside app.component.html and use the selector of that compoenet as custom html tag and then
+also you need to import in it ts file and also mention in imports because as said earlier angular doesnt automatically scans file
 
 to make the image load make sure if we have src/assets in assets in angular.json
 
 
-ng generate component user 
+ng generate component user
 ng g c user pathToCreateFile
 
-dynamic contents can be done in 2 ways 
+dynamic contents can be done in 2 ways
 1st way = is by using string interploation
 
 Ex = <div>
@@ -56,15 +56,15 @@ you wrap the property or dom element which you want to set with square brackets 
 </div>
 
 
-<div 
-  role="progressbar" 
-  [attr.aria-valuenow]="currentVal" 
+<div
+  role="progressbar"
+  [attr.aria-valuenow]="currentVal"
   [attr.aria-valuemax]="maxVal">...</div>
 
 By adding attr in front of the attribute name you want to bind dynamically, you're "telling" Angular that it shouldn't try to find a property with the specified name but instead bind the respective attribute - in the example above, the aria-valuenow and aria-valuemax attributes would be bound dynamically.
 
 
-to add event listener to an element in angular you go to that element and you do something like this 
+to add event listener to an element in angular you go to that element and you do something like this
 
 <button (click)>  we mention the event we want to add and add paranthesis aroundit
 
@@ -81,15 +81,15 @@ we defined onSelectUSer in its tempalte class
 
 ctrl + space opens up ide suggestions
 
-angular uses zone.js it automaticaaly listens to all possible events when such events occurs it checks for change detection and updates the dom snapshots 
+angular uses zone.js it automaticaaly listens to all possible events when such events occurs it checks for change detection and updates the dom snapshots
 
-two approaches for updating state one is using zone.js 
+two approaches for updating state one is using zone.js
 
-2nd method is signal which are end are special kind of values which tell angular when they change 
+2nd method is signal which are end are special kind of values which tell angular when they change
 
-signal is like a container which contains some intial value 
+signal is like a container which contains some intial value
 
-and when that value is changed angular is notified about that change and then angualar can update the changes wherever that value(basically signal value) is being used 
+and when that value is changed angular is notified about that change and then angualar can update the changes wherever that value(basically signal value) is being used
 
 
 export class UserComponent {
@@ -126,7 +126,16 @@ ng g c --skip-tests
 
 these are structral directives which bring changes to the structre
 
-*ngIf="selectedUser"  we put this structral directritive in the element 
+*ngIf="selectedUser"  we put this structral directritive in the element
 
-for else case you need a special element ng template then give identifier to it and then call it in if with else with that identifier 
+for else case you need a special element ng template then give identifier to it and then call it in if with else with that identifier
+
+Components are directives with template
+directives are template without directives
+
+ngFor ngIf ngModel are directives ,they are simply angular powered enhancements
+
+ [(ngModel)] it sets up 2 way binding for ngModel, it cannot be set up for all only to few but you can make it set for your own components
+
+ 
 

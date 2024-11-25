@@ -148,3 +148,6 @@ by default form in html will try to bundle the data and send it to server handli
 but it will be prevented if you import forms module
 
 formsModeile give ngSubmit event which occues when form submit haapens and browser deafult was prevented
+
+
+date: 'short' pipes formatting for date

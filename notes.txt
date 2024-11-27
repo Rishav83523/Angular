@@ -155,3 +155,7 @@ date: 'short' pipes formatting for date
 
 dependecny injection is suppose you need an instance but you dont create that instance yourself you say angular you need that instance and you let the angular create it
 
+//Angular Modules
+
+it is declaration array where we declare all the array thats needs to work together.
+

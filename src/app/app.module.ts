@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { CardComponent } from './shared/card/card.component';
+import { SharedModule } from './shared/shared.module';
 import { NewTaskComponent } from './tasks/new-task/new-task.component';
 import { TaskComponent } from './tasks/task/task.component';
 import { TasksComponent } from './tasks/tasks.component';
@@ -16,12 +16,11 @@ import { UserComponent } from './user/user.component';
     HeaderComponent,
     UserComponent,
     TasksComponent,
-    CardComponent,
     TaskComponent,
     NewTaskComponent,
   ],
   bootstrap: [AppComponent], //it says all the root component from where app starts
   //if we can keep some comports as standlaone we can use imports[] for them
-  imports: [BrowserModule, FormsModule], //the imports array is not just to declare standalone components but also other modules
+  imports: [BrowserModule, FormsModule, SharedModule], //the imports array is not just to declare standalone components but also other modules
 })
 export class AppModule {}

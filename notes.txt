@@ -160,3 +160,9 @@ dependecny injection is suppose you need an instance but you dont create that in
 it is declaration array where we declare all the array thats needs to work together.
 
 we can use standalone compoenet in module and also we can use module in standalone compoenet like form Modules in new Task Component
+
+
+Browser module is meant to be imported just in the root component
+
+for all other modules we use common modules
+
